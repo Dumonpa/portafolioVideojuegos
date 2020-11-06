@@ -1,0 +1,28 @@
+<h1>{{videojuego.nombre}} <small>{{videojuego.lanzamiento}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <img class="img-fluid" [src]="videojuego.img" [alt]="videojuego.nombre">
+        <br><br>
+        <a [routerLink]="['/videojuegos']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{videojuego.nombre}} <br>{{videojuego.metascore}} </h3>
+        <hr>
+        <p>Genero: {{videojuego.genero}}</p>
+        <p>Desarrollador: {{videojuego.desarrollador}}</p>
+        <p>
+            {{videojuego.bio }}
+        </p>
+        <p>Fecha de lanzamiento: {{videojuego.lanzamiento | date:'y'}}</p>
+        <div>
+            <img *ngIf="videojuego.compania == 'Nintendo'" class="img-logo" src="assets/img/LogoNintendo.png" alt="Nintendo">
+            <img *ngIf="videojuego.compania == 'Play Station'" class="img-logo" src="assets/img/LogoPlaystation.png" alt="Playstation">
+            <img *ngIf="videojuego.compania == 'Xbox'" class="img-logo" src="assets/img/LogoXbox.png" alt="Xbox">
+            <img *ngIf="videojuego.compania == 'Sega'" class="img-logo" src="assets/img/LogoSega.png" alt="Sega">
+            <img *ngIf="videojuego.compania == 'Atari'" class="img-logo" src="assets/img/LogoAtari.png" alt="Atari">
+        </div>
+    </div>
+
+</div>

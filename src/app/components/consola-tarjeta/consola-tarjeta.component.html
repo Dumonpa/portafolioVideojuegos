@@ -1,0 +1,11 @@
+<div class="card animated fadeIn fast">
+    <img [src]="consola.img" class="card-img-top" [alt]="consola.nombre">
+    <div class="card-body">
+        <h5 class="card-title">{{consola.compania }} {{ consola.nombre }} </h5>
+        <p class="card-text">{{ consola.bio | stringSlice:[150, '...']}}</p>
+        <p class="card-text"><small class="text-muted">Fecha lanzamiento: {{ consola.lanzamiento | date:'y' }}</small></p>
+
+        <button (click)="verConsola()" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
+        <!-- <a [routerLink]="['/videojuego', i]" class="btn btn-outline-primary">Ver mas link...</a> -->
+    </div>
+</div>

@@ -1,0 +1,208 @@
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ConsolasService {
+
+    private consolas: Consola[] = [
+        {
+          categoria: 'consola',
+          compania: 'Atari',
+          nombre: '2600',
+          bio: 'La Atari 2600 es una videoconsola lanzada al mercado en 1977 bajo el nombre de Atari VCS (Video Computer System), convirtiéndose en el primer sistema de videojuegos en tener gran éxito, e hizo popular los cartuchos intercambiables. En 1982, tras el lanzamiento de la Atari 5200, adoptó su nombre final basado en el número de catálogo que la identificaba (CX2600). Esta consola fue un gran éxito y logró que durante los años 1980 «Atari» fuese sinónimo de videojuegos. Se vendía acompañada de dos joysticks, dos controles tipo paddle y el juego Combat desde 1977 hasta 1983, después, se comercializó con dos controles, y con o sin cartucho de juegos dependiendo del paquete.',
+          img: 'assets/img/Atari2600.JPG',
+          lanzamiento: '1986-01-01'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Sega',
+          nombre: 'Genesis',
+          bio: 'Mega Drive, conocida en diversos territorios de América como Genesis, es una clásica videoconsola de sobremesa de 16 bits desarrollada por Sega Enterprises, Ltd. Mega Drive fue la tercera consola de Sega y la sucesora de Master System. Compitió contra la SNES de Nintendo, como parte de las videoconsolas de cuarta generación. La primera versión fue lanzada en Japón en 1988, sucedida por el lanzamiento en Norteamérica bajo el renombramiento de Genesis en 1989. En 1990, la consola fue distribuida como Mega Drive por Virgin Mastertronic en Europa, por Ozisoft en Australasia, y por Tec Toy en Brasil. En Corea del Sur, el sistema fue distribuido por Samsung y conocido como la Super Gam*Boy (en hangul, 수퍼겜보), y más tarde como Super Aladdin Boy (en hangul, 수퍼알라딘보이). Diseñada por un equipo de I+D supervisado por Hideki Sato y Masami Ishikawa, el hardware de Mega Drive fue adaptado de la placa arcade Sega System 16, centrado en un procesador Motorola 68000 como CPU primaria y un Zilog Z80 como segundo procesador. El sistema alberga una biblioteca de más de 900 juegos creados por Sega y una amplia serie de terceros, siendo publicados en formato de cartuchos. Además es capaz de reproducir juegos de Master System cuando se instala el Master System Converter que se vendía por separado. Mega Drive se benefició de diversos periféricos y servicios en línea, así como de múltiples variaciones de la consola hechas tanto por la propia Sega como por terceros con el fin de expandir sus funcionalidades.',
+          img: 'assets/img/SegaGenesis.JPG',
+          lanzamiento: '1988-10-29'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Sega',
+          nombre: 'Dreamcast',
+          bio: 'Dreamcast (ドリームキャスト) es la sexta y última consola de videojuegos hasta ahora producida por Sega. Fue desarrollada en cooperación con Hitachi y Microsoft. Dreamcast es la sucesora de Sega Saturn y fue lanzada al mercado para ganar terreno a PlayStation de Sony y Nintendo 64 de Nintendo, y competir con los sistemas sucesores a estos. Pertenece a la sexta generación de consolas. Se detuvo su producción el 31 de marzo de 2001 tras la decisión de Sega de dedicarse en exclusiva a la programación de videojuegos. Sus principales características son su lector óptico GD-ROM y su procesador Hitachi. El sistema fue el primero en tener un módem incorporado para jugar en línea. Otras, como su predecesora, Sega Saturn, lo tenían como periférico opcional, y no en todos los países donde eran distribuidas. En esta versión, el módem se mejoró y se pudo usar además en Latinoamérica.',
+          img: 'assets/img/SegaDreamcast.JPG',
+          lanzamiento: '1998-11-27'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Gameboy Advance SP',
+          bio: 'La Game Boy Advance SP, frecuentemente abreviada como GBA SP, es una consola de videojuegos portátil fabricada por Nintendo y lanzada al mercado en marzo de 2003. Básicamente es un rediseño de la Game Boy Advance, con varias funciones añadidas como batería o pantalla iluminada. Es totalmente compatible con su antecesora. Las siglas SP hacen referencia a​ (en español Proyecto Especial), término aclarado por Nintendo en su página web de atención al cliente.',
+          img: 'assets/img/GameboyAdvance.JPG',
+          lanzamiento: '2003-03-01'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'DSI',
+          bio: 'Nintendo DSi (ニンテンドーDSi Nintendō Dīesuai) es una videoconsola portátil fabricada por Nintendo, una revisión del modelo Nintendo DS Lite. Fue anunciada en una conferencia previa al Tokyo Game Show el 2 de octubre de 2008.1​ Salió al mercado japonés el 1 de noviembre de 2008. En Australia salió el 2 de abril de 2009, en Europa el 3 de abril de 2009, en Estados Unidos el 4 de abril de 2009 y en Latinoamérica el 13 de mayo de 2009. El Firmware actual de la consola es el 1.4.5E, donde se proporciona mejoras detrás del escenario al rendimiento del sistema.2​',
+          img: 'assets/img/DSI.JPG',
+          lanzamiento: '2008-11-01'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Microsoft',
+          nombre: 'XBOX',
+          bio: 'Xbox, o también llamada Xbox Clásica, Xbox Original o Primera Xbox . Es una videoconsola de sobremesa de sexta generación producida por Microsoft y la primera de esta empresa, en colaboración con Intel. Su principal característica es su procesador central basado en el procesador Intel Pentium III. El sistema también incorpora un lector de DVD, un disco duro interno, puerto ethernet y por último el sistema dispone de cuatro conectores para los mandos. Las unidades vendidas de este equipo fueron 24 000 000 consolas, según las cifras oficiales.',
+          img: 'assets/img/XBOX.JPG',
+          lanzamiento: '2001-11-15'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Sony',
+          nombre: 'Play Station',
+          bio: 'PlayStation (プレイステーション Pureisutēshon, oficialmente abreviada como PS1) es la primera videoconsola de Sony, y la primera de dicha compañía en ser diseñada por Ken Kutaragi, y es una videoconsola de sobremesa de 32 bits lanzada por Sony Computer Entertainment el 3 de diciembre de 1994 en Japón. Se considera la videoconsola más exitosa de la quinta generación tanto en ventas como en popularidad. Además de la original, en el año 2000 se lanzó la PSone (también llamado modelo slim). Tuvo gran éxito al implantar el CD-ROM dentro de su hardware a pesar de que otras compañías como SEGA (Sega CD), Panasonic (3DO), Philips (CD-i), SNK (Neo Geo CD), NEC (Super CD-ROM) y Atari (Atari Jaguar) ya lo habían empleado. Dichas compañías tuvieron poco éxito al utilizar el CD-ROM como soporte para almacenar juegos. Se estima que Sony pudo vender 105 500 000 unidades de su videoconsola en diez años. La consola fue retirada oficialmente del mercado el 23 de marzo de 2006.',
+          img: 'assets/img/PS1.JPG',
+          lanzamiento: '1994-12-03'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Famicom',
+          bio: 'Tras una serie de redituables lanzamientos arcade a principios de los años 1980, Nintendo concibió la producción de una videoconsola a base de cartuchos.15​ Bajo este concepto, Masayuki Uemura y su equipo Nintendo R&D se encargaron de diseñar un sistema de juego que fuera menos costoso que sus competidores directos y que además tuviera un desempeño exitoso en el mercado con el fin de que no pudiera ser sobrepasado a nivel comercial por otros sistemas rivales, por lo menos en un período de un año.16​ Su lanzamiento se produjo en Japón el 15 de julio de 1983, teniendo un precio de 14 800 JPY y siendo acompañada de tres exitosos «juegos incluidos» de tipo arcade (Donkey Kong, Donkey Kong Jr. y Popeye). No obstante, después de haber logrado buenas ventas en sus primeros meses,17​ se evidenció un fallo técnico en la Family Computer (mejor conocida como Famicom) producido por una colocación deficiente del circuito integrado, lo cual causaba que el sistema se «congelara» apenas era ejecutado el software.  Después de arreglar la deficiencia con una nueva placa base, lo cual requirió el cese temporal de la distribución de la Famicom en el mercado, su popularidad se disparó, superando a nivel comercial a su competidor directo, Sega SG-1000, y pasando a convertirse en el sistema más vendido en Japón para finales de 1984 —hasta ese entonces, Nintendo había vendido más de dos millones y medio de Famicoms en territorio japonés',
+          img: 'assets/img/Family.JPG',
+          lanzamiento: '1983-06-15'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Entertainment System ',
+          bio: 'Nintendo Entertainment System (también conocida como NES)5​ es la segunda consola de sobremesa de Nintendo, y es una videoconsola de ocho bits perteneciente a la tercera generación en la industria de los videojuegos. Fue lanzada por Nintendo en Norteamérica, Europa y Australia entre 1985 y 1987. En la mayor parte del continente asiático, incluyendo a Japón (donde se comercializó por primera vez en 1983), China, Vietnam, Singapur, Laos, Camboya y Filipinas se la conoció con el nombre de Family Computer (ファミリーコンピュータ?), abreviado comúnmente como Famicom (ファミコン? Acerca de este sonido escuchar (?·i), o simplemente FC). En Corea del Sur se llamó Hyundai Comboy (현대 컴보이) y fue distribuida por Hyundai Electronics, mientras que en regiones como Rusia y el sur de Asia pasó a denominarse Dendy (Де́нди) y Tata Famicom, respectivamente. En 1990, la Super Nintendo reemplazó a la NES en el mercado. Fue descontinuada en 1995 (en Japón fue en 2003)6​, y su último título fue Wario\'s Woods. En el año 2013 Capcom lanzó una edición limitada de 150 unidades de un cartucho original de NES de color dorado, con el juego Ducktales. 7​',
+          img: 'assets/img/NES.JPG',
+          lanzamiento: '1983-06-15'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Super Nintendo',
+          bio: 'La Super Nintendo Entertainment System, conocida popularmente como la Super Nintendo, también llamada la Super Famicom (japonés: スーパーファミコン, Hepburn: Sūpā Famikon) en Japón7​ (abreviada SFC) y la Hyundai Super Comboy (hangul: 현대 슈퍼 컴보이, romanización revisada: Hyeondae Syupeo Keomboi) en Corea del Sur,8​ también nombrada oficialmente de forma abreviada como la Super NES o SNES en América9​ y como la Super Nintendo en Europa10​, es la tercera videoconsola de sobremesa de Nintendo y la sucesora de Nintendo Entertainment System (NES) en América y Europa. Mantuvo una gran rivalidad en todo el mundo con la Sega Mega Drive (o Sega Genesis) durante la era de 16 bits. Fue descontinuada en el año 1999 (2003 en Japón)11​ y años más tarde, fue relanzada virtualmente a través de la Consola Virtual en la Wii en 2006, Wii U en 2013, Nintendo 3DS (solo la versión New) en 2016 y Nintendo Switch en 2019 (no a través de la Consola Virtual, si no a través del servicio en línea Nintendo Switch Online).',
+          img: 'assets/img/SNES.JPG',
+          lanzamiento: '1990-11-21'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Sony',
+          nombre: 'Play Station 2',
+          bio: 'Fue lanzada por primera vez el 4 de marzo del año 2000 en Japón, y unos meses después en el resto del mundo. Es la videoconsola más vendida de la historia, con más de 160 millones de unidades vendidas. Esta consola es también la que más títulos posee, aproximadamente 3870 títulos (y no 10000 como muchos creen), seguida por su predecesora la PlayStation con unos 2500 títulos. Esta cantidad de títulos dada la extraordinaria acogida por parte del público en general hacia la misma, lo que incluso la consolidó como la consola con más tiempo en el mercado y a su vez la consola con más duración en el mismo, hasta que el 3 de enero del año 2013 se decide detener su fabricación tras 13 años de actividad.3​ A pesar del anuncio, se continuaron produciendo nuevos juegos para la consola hasta finales de 2013, estos fueron FIFA 14 y Pro Evolution Soccer 2014.',
+          img: 'assets/img/PS2.JPG',
+          lanzamiento: '2000-03-04'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Sony',
+          nombre: 'Play Station 4 PRO',
+          bio: 'PlayStation 4 (プレイステーション4 Pureisutēshon Fō?, oficialmente abreviada como PS4) es la cuarta videoconsola del modelo PlayStation.8​ Es la segunda consola de Sony en ser diseñada por Mark Cerny y forma parte de las videoconsolas de octava generación. Fue anunciada oficialmente el 20 de febrero de 2013 en el evento PlayStation Meeting 2013,9​ aunque el diseño de la consola no fue presentado hasta el 10 de junio en el E3 2013.10​ Es la sucesora de la PlayStation 3 y compite con Wii U y Switch de Nintendo y Xbox One de Microsoft. Su lanzamiento fue el 15 de noviembre de 2013 en Estados Unidos y en Europa y Sudamérica fue el 29 de noviembre de 2013,11​9​ mientras que en Japón fue el 22 de febrero de 2014.2',
+          img: 'assets/img/PS4PRO.JPG',
+          lanzamiento: '2013-11-15'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Nintendo 64 ',
+          bio: 'Nintendo 64 es la cuarta videoconsola de sobremesa producida por Nintendo, desarrollada para suceder a la Super Nintendo y para competir con el Saturn de Sega y la PlayStation de Sony.Incorpora en su arquitectura un procesador principal de 64 bits. El soporte de almacenamiento de los juegos es en forma de cartuchos, la mayoría de ellos con memoria interna. El uso de este tipo de almacenamiento le supuso una seria desventaja comercial frente a sus competidores, ya que encarecía los costes de producción lo que aumentaba el precio final, y además, era de una capacidad de almacenamiento menor al de un CD-ROM. Técnicamente, la utilización de cartuchos ofrece algunas ventajas frente al formato CD-ROM, siendo esta la idea que mantenía Nintendo frente a la competencia. El cartucho tiene tiempos de acceso al sistema mucho más cortos, hace posible la inclusión de coprocesadores y otros chips dentro del cartucho y técnicas como streaming en tiempo real para mejorar las capacidades de los juegos, logrando ampliar su vida útil; y en un principio parecía que podría ser más económico por no pagar derechos por uso del formato CD-ROM, ni una unidad lectora para el mismo que sería además mucho más delicada que una ranura o slot para cartuchos. Sin embargo, la escasa capacidad del cartucho en comparación con el CD-ROM supuso ausencia casi total de cinemáticas pregrabadas, una merma en la calidad del sonido y una falta de espacio para recursos como texturas y número de escenarios.​',
+          img: 'assets/img/N64.JPG',
+          lanzamiento: '1996-06-23'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Wii ',
+          bio: 'Wii (ウィー Uī?) es la sexta videoconsola producida por Nintendo y estrenada el 19 de noviembre de 2006 en Norteamérica y el 8 de diciembre del mismo año en Europa. Perteneciente a la séptima generación de consolas,11​ es la sucesora directa de Nintendo GameCube y compitió con la Xbox 360 de Microsoft y la PlayStation 3 de Sony. Nintendo afirmó que Wii está destinada a una audiencia más amplia a diferencia de las otras dos consolas.12​ Desde su debut, la consola superó a sus competidoras en cuanto a ventas,13​ y, en diciembre de 2009, rompió el récord como la consola más vendida en un solo mes en Estados Unidos.La característica más distintiva de la consola es su mando inalámbrico, el Wii Remote, el cual puede usarse como un dispositivo de mano con el que se puede apuntar, además de poder detectar movimientos en un plano tridimensional. Otra de sus peculiaridades era el servicio WiiConnect24, que permitía recibir mensajes y actualizaciones a través de Internet en modo de espera.15​ Adicionalmente, la consola puede sincronizarse con la portátil Nintendo DS, lo cual permite que Wii aproveche la pantalla táctil de la Nintendo DS como mando alternativo.16​',
+          img: 'assets/img/Wii.JPG',
+          lanzamiento: '2006-11-19'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Gamecube',
+          bio: 'Nintendo GameCube (ニンテンドーゲームキューブ Nintendō GēmuKyūbu?) también llamada simplemente GameCube y abreviada como GCN en América y NGC en Japón, es la quinta consola de sobremesa hecha por Nintendo. Es la sucesora de la Nintendo 64 y la predecesora de la Wii. Sus principales características son su procesador central basado en un IBM PowerPC (tecnología previa utilizada en computadoras personales y portátiles), y su procesador gráfico desarrollado por ATI Technologies. Nintendo, por primera vez, prescinde del cartucho (ROM) como formato de almacenamiento, y adopta un formato óptico propio, el Nintendo Optical Disc. El nombre «GameCube» se debe a que el sistema tiene la forma parecida a la de un cubo. Es además la primera consola de Nintendo que no cuenta en su fecha de lanzamiento con un juego de Mario, mascota oficial de la casa.​',
+          img: 'assets/img/Wii.JPG',
+          lanzamiento: '2001-09-14'
+        },
+        {
+          categoria: 'juguetes',
+          compania: 'Nintendo',
+          nombre: 'Amiibo',
+          bio: 'Amiibo (アミーボ amībo?) es el protocolo de comunicaciones y de almacenamiento inalámbrico de Nintendo, para su uso entre los juguetes compatibles y las plataformas de juego de Nintendo 3DS, Wii U y Nintendo Switch. Se puso en marcha en noviembre de 2014 en forma de actualizaciones de software del sistema y una serie de figuras amiibo. De forma similar a Skylanders y Disney Infinity, estas figuras, usan la tecnología de comunicación de corto alcance (NFC) para interactuar con el videojuego compatible, permitiendo que los datos sean transferidos dentro y fuera de cada juego y en múltiples plataformas. La plataforma puede potencialmente albergar cualquier tipo de juguete, incluyendo cartas.',
+          img: 'assets/img/Amiibo.JPG',
+          lanzamiento: '2014-11-01'
+        },
+        {
+          categoria: 'juguetes',
+          compania: 'Varios',
+          nombre: 'Figuras',
+          bio: 'Varias figuras de la saga Star Wars. Destacan las de Disney Infinity 3.0.',
+          img: 'assets/img/StarWars.JPG',
+          lanzamiento: '2020-01-01'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Microsoft',
+          nombre: 'Xbox 360',
+          bio: 'Xbox 360 es la segunda videoconsola de sobremesa de la marca Xbox producida por Microsoft. Fue desarrollada en colaboración con IBM y ATI (AMD) y lanzada en América del Sur, América del Norte, Japón, Europa y Australia entre 2005 y 2006. Su servicio Xbox Live (de pago) permite a los jugadores competir en línea y descargar contenidos como juegos arcade, demos, tráileres, programas de televisión y películas. La Xbox 360 es la sucesora directa de la Xbox, y compitió con la PlayStation 3 de Sony y Wii de Nintendo como parte de las videoconsolas de séptima generación.​',
+          img: 'assets/img/Xbox360.JPG',
+          lanzamiento: '2005-05-12'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Nintendo',
+          nombre: 'Switch',
+          bio: 'Nintendo Switch (ニンテンドー スイッチ Nintendō Suitchi?) es la novena consola de videojuegos principal desarrollada por Nintendo. Conocida en el desarrollo por su nombre código «NX», se dio a conocer en octubre de 2016 y fue lanzada mundialmente el 3 de marzo de 2017. Nintendo considera a Switch una consola híbrida. Se puede utilizar como consola de sobremesa con la unidad principal insertada en una estación de acoplamiento para conectarla con un televisor. Alternativamente, puede ser extraída de la base y utilizada de forma similar a una tableta a través de su pantalla táctil LCD, o colocada sobre una superficie gracias a su soporte plástico integrado siendo así visible por varios jugadores.',
+          img: 'assets/img/Switch.JPG',
+          lanzamiento: '2017-03-03'
+        },
+        {
+          categoria: 'consola',
+          compania: 'Microsoft',
+          nombre: 'Xbox One',
+          bio: 'Xbox One es la tercera videoconsola de sobremesa de la marca Xbox, producida por Microsoft. Forma parte de las videoconsolas de octava generación, fue presentada por Microsoft el 21 de mayo de 2013.6​ Es la sucesora de la Xbox 360 y la predecesora de la Xbox Series X actualmente compite con PlayStation 4 de Sony y Nintendo Switch de Nintendo. Su salida a la venta fue el 22 de noviembre de 20137​ a un precio de 499 dólares. El Firmware actual de la consola es el 10.0.17133.2020 (rs4_release_xbox_dev_1804.180418-1415), donde hay más opciones de salida de vídeo, hay un nuevo nivel de interactividad de Mixer, se pueden compartir las capturas en Twitter, hay torneos abiertos, se pueden poner los temas en un horario, hay mejoras al Narrador, mejoras en Edge, hay más audio inmersivo y hay un filtrado avanzado para propietarios de clubes.9​',
+          img: 'assets/img/XBOXONE.JPG',
+          lanzamiento: '2013-05-21'
+        }
+    ];
+
+    constructor() {
+        console.log('servicio listo para usarse');
+    }
+
+    getConsolas(){
+      return this.consolas;
+    }
+
+    getConsola(idx: string){
+      return this.consolas[idx];
+    }
+
+    buscarConsola(termino: string){
+      let consolaArr: Consola[] = [];
+      termino = termino.toLowerCase();
+
+      for (let i = 0; i < this.consolas.length; i++){
+        let consola = this.consolas[i];
+        let nombre = consola.nombre.toLowerCase();
+
+        if (nombre.indexOf(termino) >= 0){
+        consola.idx = i;
+        consolaArr.push(consola);
+        }
+      }
+      return consolaArr;
+    }
+
+}
+
+
+export interface Consola{
+    categoria: string;
+    nombre: string;
+    bio: string;
+    img: string;
+    lanzamiento: string;
+    compania: string;
+    idx?: number;
+}

@@ -1,0 +1,28 @@
+<h1>{{consola.nombre}} <small>{{consola.lanzamiento}}</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <img class="img-fluid" [src]="consola.img" [alt]="consola.nombre">
+        <br><br>
+        <a [routerLink]="['/consolas']" class="btn btn-outline-danger btn-block">Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{consola.nombre}}</h3>
+        <hr>
+        <p>Compañía: {{consola.compania}}</p>
+        <p>
+            {{consola.bio}}
+        </p>
+        <p>Fecha de lanzamiento: {{consola.lanzamiento}}</p>
+        <div>
+            <img *ngIf="consola.compania == 'Nintendo'" class="img-logo" src="assets/img/LogoNintendo.png" alt="Nintendo">
+            <img *ngIf="consola.compania == 'Sony'" class="img-logo" src="assets/img/LogoPlaystation.png" alt="Playstation">
+            <img *ngIf="consola.compania == 'Microsoft'" class="img-logo" src="assets/img/LogoXbox.png" alt="Xbox">
+            <img *ngIf="consola.compania == 'Sega'" class="img-logo" src="assets/img/LogoSega.png" alt="Sega">
+            <img *ngIf="consola.compania == 'Atari'" class="img-logo" src="assets/img/LogoAtari.png" alt="Atari">
+            <img *ngIf="consola.compania == 'Varios'" class="img-logo" src="assets/img/LogoNintendo.png" alt="Nintendo">
+        </div>
+    </div>
+
+</div>

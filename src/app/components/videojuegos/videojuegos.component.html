@@ -1,0 +1,16 @@
+<h1>Videojuegos <small>Nintendo, Sony, Sega, Atari y Xbox</small></h1>
+
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let videojuego of videojuegos; let i = index">
+        <img [src]="videojuego.img" class="card-img-top" [alt]="videojuego.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ videojuego.nombre }} <br> Metascore: {{videojuego.metascore }}</h5>
+            <p class="card-text">Consola: {{ videojuego.consola }} <br> Desarrollador: {{ videojuego.desarrollador }} <br> Genero: {{ videojuego.genero }} </p>
+            <p class="card-text">{{ videojuego.bio |stringSlice:[150, '...'] }}</p>
+            <p class="card-text"><small class="text-muted">Fecha lanzamiento: {{ videojuego.lanzamiento }}</small></p>
+
+            <button (click)="verVideojuego(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
+            <!-- <a [routerLink]="['/videojuego', i]" class="btn btn-outline-primary">Ver mas link...</a> -->
+        </div>
+    </div>
+</div>
